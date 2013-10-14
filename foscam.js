@@ -78,6 +78,7 @@ app.status = function( cb ) {
 					case '0': result.alarm_status_str = 'no alarm'; break
 					case '1': result.alarm_status_str = 'motion alarm'; break
 					case '2': result.alarm_status_str = 'input alarm'; break
+					case '3': result.alarm_status_str = 'audio alarm'; break
 				}
 			}
 			
@@ -181,6 +182,14 @@ app.control = {
 				case 'stop vertical patrol':    cmd = 27; break
 				case 'horizontal patrol':       cmd = 28; break
 				case 'stop horizontal patrol':  cmd = 29; break
+				case 'leftup': 								  cmd = 91;break
+				case 'rightup': 								cmd = 90;break
+				case 'leftdown': 							  cmd = 93;break
+				case 'rightdown': 							cmd = 92;break
+				case 'stop leftup': 						
+				case 'stop rightup':
+				case 'stop leftdown':
+				case 'stop rightdown': 				  cmd = 1;break
 				case 'io output high':          cmd = 94; break
 				case 'io output low':           cmd = 95; break
 			}
